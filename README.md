@@ -1,6 +1,20 @@
-# Python Data Science container
+# SuReLI docker images repository
 
-[![CircleCI](https://circleci.com/gh/andreivmaksimov/python_data_science.svg?style=svg)](https://circleci.com/gh/andreivmaksimov/python_data_science)
+**Ongoing work, repository not functional**
+
+This is a fork from [Andrei Maksimov's python_data_science repository](https://github.com/andreivmaksimov/python_data_science). It also contains as sub-modules: [OpenAI Gym's repository](https://github.com/openai/gym) ; and Emmanuel Rachelson's [RL Jupyter notebooks](https://github.com/erachelson/RLclass) and [ML Jupyter notebooks](https://github.com/erachelson/MLclass).
+
+As this repository has sub-modules please clone with 
+
+```
+git clone --recurse-submodules repository-address
+```
+
+# TODO
+
+The rest of this readme has not been processed yet.
+
+Contents
 
 This is fully ready Docker container with:
  - NumPy
@@ -14,6 +28,7 @@ This is fully ready Docker container with:
  - Tensorflow
  - Keras
  - OpenCV 3
+
 
 We're building this container on top of [Ubuntu 16.04 Docker container](https://hub.docker.com/_/ubuntu/) ([Dockerfile](https://github.com/andreivmaksimov/python_data_science/blob/master/Dockerfile)) and [Anaconda Docker container](https://hub.docker.com/r/continuumio/anaconda3/) ([Dockerfile](https://github.com/andreivmaksimov/python_data_science/blob/master/Dockerfile.anaconda))
 
