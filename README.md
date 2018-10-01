@@ -14,7 +14,7 @@ git clone --recurse-submodules repository-address
 
 ## Building
 
-To build the Docker images run 
+To build the Docker images install sshpass (e.g. with `apt install sshpass`) and run 
 
 ```
 ./build.sh
@@ -35,14 +35,15 @@ Two images are built. The first, `sureli-docker-no-gym`, has:
  - Keras
  - OpenCV 3
 
-The second, `sureli-docker`, has also Open AI Gym and adds a few utilities such as ipython3, git, vim, tmux, screen.
+The second, `sureli-docker`, has also Open AI Gym and adds a few utilities such as ipython3, git, vim, tmux, screen. Only this image is supported, the intermediate image is functional but very limited (e.g. no graphics are exported).
+
 
 **Warning:**  The docker container is not aware of any proxies, please connect to a network with direct access to the Internet to ensure the image is able to download the required software packages. If you are at ISAE SUPAERO you have this with "Eduroam".
 
 ## Running
 
-To run the docker just execute `./sureli-docker.sh [no-gym]`, which:
- - Runs the appropriate docker container
+To run the docker just execute `./sureli-docker.sh`, which:
+ - Runs the docker container
  - Exports port 8888 (Jupyter) and 6006 (Tensorflow Dashboard) 
  - Mounts the `notebook` directory inside the container
  - Logs in the container via SSH
