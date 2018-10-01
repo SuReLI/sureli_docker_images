@@ -1,0 +1,9 @@
+[submodule "gym"]
+	path = gym
+	url = git@github.com:openai/gym.git
+[submodule "notebooks/MLclass"]
+	path = notebooks/MLclass
+	url = git@github.com:erachelson/MLclass.git
+[submodule "notebooks/RLclass"]
+	path = notebooks/RLclass
+	url = git@github.com:erachelson/RLclass.git
