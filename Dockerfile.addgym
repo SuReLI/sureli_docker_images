@@ -37,8 +37,8 @@ RUN mkdir -p gym && touch gym/__init__.py
 COPY ./gym/gym/version.py ./gym
 COPY ./gym/requirements.txt .
 COPY ./gym/setup.py .
-RUN pip install msgpack
-RUN pip install -e .[all]
+RUN pip install --default-timeout=100 msgpack
+RUN pip install --default-timeout=100 -e .[all]
 
 
 # Finally, upload our actual code!
