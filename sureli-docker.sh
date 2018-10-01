@@ -19,9 +19,9 @@ fi
 docker images | grep -v sureli-docker-no-gym | grep sureli-docker >/dev/null
 if [ "$1" == "no-gym" ] || [ "$?" != "0" ]
 then
-  DOCKERNAME = "sureli-docker-no-gym"
+  DOCKERNAME="sureli-docker-no-gym"
 else
-  DOCKERNAME = "sureli-docker"
+  DOCKERNAME="sureli-docker"
 fi
 
 # Run it
