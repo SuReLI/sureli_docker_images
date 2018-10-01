@@ -9,11 +9,11 @@ echo -e "#############################################\nBuilding SUReLI base ima
 for i in `seq 1 10`
 do
   docker build -t sureli-docker-no-gym -f Dockerfile.base .
-  if [ "$?" == "0" ]; then exit; fi
+  if [ "$?" == "0" ]; then break; fi
 done
 for i in `seq 1 10`
 do
   docker build -t sureli-docker -f Dockerfile.addgym .
-  if [ "$?" == "0" ]; then exit; fi
+  if [ "$?" == "0" ]; then break; fi
 done 
 
