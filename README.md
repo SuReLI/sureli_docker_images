@@ -1,6 +1,6 @@
 # SuReLI docker images repository
 
-**Ongoing work, repository not functional**
+**Ongoing work, needs testing**
 
 This is a fork from [Andrei Maksimov's python_data_science repository](https://github.com/andreivmaksimov/python_data_science). It also contains as sub-modules: [OpenAI Gym's repository](https://github.com/openai/gym) ; and Emmanuel Rachelson's [RL Jupyter notebooks](https://github.com/erachelson/RLclass) and [ML Jupyter notebooks](https://github.com/erachelson/MLclass).
 
