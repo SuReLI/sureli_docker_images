@@ -20,8 +20,6 @@ To build the Docker images install sshpass (e.g. with `apt install sshpass`) and
 ./build.sh
 ```
 
-If you get a build error, please rerun the build script before filling an issue.
-
 Two images are built. The first, `sureli-docker-no-gym`, has:
  - NumPy
  - Pandas
