@@ -37,7 +37,7 @@ RUN mkdir -p gym && touch gym/__init__.py
 COPY ./gym/gym/version.py ./gym
 COPY ./gym/requirements.txt .
 COPY ./gym/setup.py .
-pip install --upgrade pip
+RUN pip install --upgrade pip
 RUN pip install --default-timeout=100 msgpack
 RUN pip install --default-timeout=100 -e .[all]
 
