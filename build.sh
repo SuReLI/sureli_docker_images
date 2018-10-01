@@ -6,6 +6,14 @@ then
 fi
 
 echo -e "#############################################\nBuilding SUReLI base image\n#############################################"
-docker build -t sureli-docker-no-gym -f Dockerfile.base .
-docker build -t sureli-docker -f Dockerfile.addgym .
+for i in `seq 1 10`
+do
+  docker build -t sureli-docker-no-gym -f Dockerfile.base .
+  if [ "$?" == "0" ]; then exit; fi
+done
+for i in `seq 1 10`
+do
+  docker build -t sureli-docker -f Dockerfile.addgym .
+  if [ "$?" == "0" ]; then exit; fi
+done 
 
