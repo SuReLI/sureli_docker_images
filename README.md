@@ -35,6 +35,8 @@ Two images are built. The first, `sureli-docker-no-gym`, has:
 
 The second, `sureli-docker`, has also Open AI Gym and adds a few utilities such as ipython3, git, vim, tmux, screen.
 
+**Warning:**  The docker container is not aware of any proxies, please connect to a network with direct access to the Internet to ensure the image is able to download the required software packages. If you are at ISAE SUPAERO you have this with "Eduroam".
+
 ## Running
 
 To run the docker just execute `./sureli-docker.sh [no-gym]`, which:
