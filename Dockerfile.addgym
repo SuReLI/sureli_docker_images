@@ -1,0 +1,62 @@
+FROM sureli-docker-no-gym
+MAINTAINER "Carlos Aguilar"
+
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get update \
+      && apt-get install -y libav-tools \
+      python3-setuptools \
+      libpq-dev \
+      libjpeg-dev \
+      cmake \
+      swig \
+      freeglut3 \
+      python3-opengl \
+      libboost-all-dev \
+      libglu1-mesa \
+      libglu1-mesa-dev \
+      libsdl2-2.0-0\
+      libgles2-mesa-dev \
+      libsdl2-dev \
+      wget \
+      unzip \
+      git \
+      xserver-xorg-input-void \
+      xserver-xorg-video-dummy \
+      xpra \
+      locales \
+      vim \
+      openssh-server \
+      xauth \
+      screen \
+      tmux \
+      && apt-get clean \
+      && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /usr/local/gym
+RUN mkdir -p gym && touch gym/__init__.py
+COPY ./gym/gym/version.py ./gym
+COPY ./gym/requirements.txt .
+COPY ./gym/setup.py .
+RUN pip install msgpack
+RUN pip install -e .[all]
+
+
+# Finally, upload our actual code!
+COPY ./gym/ /usr/local/gym
+
+RUN echo "en_US.UTF-8 UTF-8\nfr_FR.UTF-8 UTF-8" >> /etc/locale.gen && locale-gen 
+ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
+RUN echo "PermitRootLogin yes\nX11UseLocalhost no" >> /etc/ssh/sshd_config
+RUN systemctl enable ssh.socket
+RUN echo "root:tutu" | chpasswd
+RUN mkdir /var/run/sshd
+
+WORKDIR /root
+# Jupyter and Tensorboard ports
+EXPOSE 8888 6006 22
+
+# Store notebooks in this mounted directory
+VOLUME /notebooks
+
+CMD ["/usr/sbin/sshd", "-D"]
+
