@@ -64,7 +64,7 @@ To run the docker just execute `./sureli-docker.sh`, which:
  - Logs in the container via SSH
  - Stops the container when exiting the SSH connection
 
-If you get an SSH warning about a man-in-the-middle attack execute the line which starts with `ssh-keygen -f...`. Note that doing so isn't safe for non-loopback connections so don't get used to it ;).
+If you get an SSH warning about a man-in-the-middle attack execute the line which starts with `ssh-keygen -f...` (you may need to add quotes to the last argument of this command). Note that doing so isn't safe for non-loopback connections so don't get used to it ;).
 
 
 ## Container usage
