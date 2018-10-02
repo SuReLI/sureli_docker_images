@@ -14,6 +14,8 @@ git clone --recurse-submodules repository-address
 
 ## Building
 
+If you want to skip building you can go to the next section to directly pull a ready-to-use docker image.
+
 To build the Docker images install sshpass (e.g. with `apt install sshpass`) and run 
 
 ```
@@ -35,8 +37,15 @@ Two images are built. The first, `sureli-docker-no-gym`, has:
 
 The second, `sureli-docker`, has also Open AI Gym and adds a few utilities such as ipython3, git, vim, tmux, screen. Only this image is supported, the intermediate image is functional but very limited (e.g. no graphics are exported).
 
+To limit the space requirements, the intermediate image, `sureli-docker-no-gym`, is erased at the end of the `build.sh` script.
 
-**Warning:**  The docker container is not aware of any proxies, please connect to a network with direct access to the Internet to ensure the image is able to download the required software packages. If you are at ISAE SUPAERO you have this with "Eduroam".
+**Warning:**  If you need a proxy to connect to the Internet you will most probably run into trouble when trying to build docker images. If you have connectivity issues with this script you can pull a ready-to-use image as explained in the next section. 
+
+## Pulling
+
+**Preliminary note:** Even if you do not build your image you should clone this repository as it will give you access to the `sureli-docker.sh` script and to the `notebooks` directory.
+
+To pull an image instead of building it just run `docker pull carlosaguilar/sureli-docker` (note this will download around 5Gbytes of data which may take some time).
 
 ## Running
 
