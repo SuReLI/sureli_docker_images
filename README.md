@@ -4,6 +4,12 @@
 
 This is a fork from [Andrei Maksimov's python_data_science repository](https://github.com/andreivmaksimov/python_data_science). It also contains as sub-modules: [OpenAI Gym's repository](https://github.com/openai/gym) ; and Emmanuel Rachelson's [RL Jupyter notebooks](https://github.com/erachelson/RLclass) and [ML Jupyter notebooks](https://github.com/erachelson/MLclass).
 
+## Requirements 
+
+You need to install `sshpass` (e.g. with `apt install sshpass`). This requirement isn't a strong one. If you prefer you can look into the script `sureli-docker.sh` and remove sshpass by for example adding your public key to the `authorized_keys` file in the docker image and commiting it.
+
+If you don't understand what I am talking about, install `sshpass`.
+
 ## Cloning
 
 As this repository has sub-modules please clone with 
@@ -16,7 +22,7 @@ git clone --recurse-submodules repository-address
 
 If you want to skip building you can go to the next section to directly pull a ready-to-use docker image.
 
-To build the Docker images install sshpass (e.g. with `apt install sshpass`) and run 
+To build the Docker images run 
 
 ```
 ./build.sh
