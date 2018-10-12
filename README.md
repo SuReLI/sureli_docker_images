@@ -12,6 +12,45 @@ As this repository has sub-modules please clone with
 git clone --recurse-submodules repository-address
 ```
 
+## Quick setup
+
+```
+# Install Docker from docker.com or in recent Ubuntu distribs with 
+sudo apt install docker.io
+# Add yourself to the docker group
+sudo usermod -aG docker ${USER} && su - ${USER}
+# Get the image sureli-docker image from dockerhub (or build it following instructions in the README)
+docker pull carlosaguilar/sureli-docker
+# Install sshpass for the startup script, in Ubunt distribs you can use
+sudo apt install sshpass
+# Run the docker image and log in with ssh to it
+./sureli-docker.sh
+# Start tmux or screen to be able to have multiple sessions in the same terminal
+tmux
+# Launch Jupyter
+jupyter notebook
+# Open a web navigator and go to http://localhost:8888
+# Go to "RL Class -> RL0 - Introduction to Reinforcement Learning.ipynb"
+# Execute the first python cell (bottom of the document)
+# This should open up a window with Breakout
+# Note that the second python cell does not work as it should be env1.close()
+# Go back to your terminal and press Ctrl+b and then c to create a new tab in tmux
+# Start iPython
+ipython
+# Test some code 
+import gym
+env0 = gym.make('FrozenLake-v0')
+env0.render()
+env1 = gym.make('Breakout-v0')
+env1.render()
+# This should also open a Breakout window
+# Close it now
+env1.render()
+# To pass from a tab to another you can use Ctrl+b and then n (next) or p (previous)
+# Quick-setup finished !
+```
+
+
 ## Building
 
 If you want to skip building you can go to the next section to directly pull a ready-to-use docker image.
