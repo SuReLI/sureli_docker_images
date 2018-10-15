@@ -68,7 +68,7 @@ env1 = gym.make('Breakout-v0')
 env1.render()
 # This should also open a Breakout window
 # Close it now
-env1.render()
+env1.close()
 # To pass from a tab to another you can use Ctrl+b and then n (next) or p (previous)
 # Quick-setup finished !
 ```
