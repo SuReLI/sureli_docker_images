@@ -17,9 +17,10 @@ git clone --recurse-submodules repository-address
 ```
 # Install Docker from docker.com or in recent Ubuntu distribs with 
 sudo apt install docker.io
+# On older distribs docker-ce should be installed instead of docker.io
 # Add yourself to the docker group
 sudo usermod -aG docker ${USER} && su - ${USER}
-# Get the image sureli-docker image from dockerhub (or build it following instructions in the README)
+# Get the sureli-docker image from dockerhub (or build it following instructions in the README)
 docker pull carlosaguilar/sureli-docker
 # Install sshpass for the startup script, in Ubunt distribs you can use
 sudo apt install sshpass
