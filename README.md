@@ -14,16 +14,37 @@ git clone --recurse-submodules repository-address
 
 ## Quick setup
 
+Pre-requisites (Ubuntu)
+
 ```
 # Install Docker from docker.com or in recent Ubuntu distribs with 
 sudo apt install docker.io
 # On older distribs docker-ce should be installed instead of docker.io
 # Add yourself to the docker group
 sudo usermod -aG docker ${USER} && su - ${USER}
+# Install sshpass for the startup script
+sudo apt install sshpass
+```
+
+Pre-requisites (Fedora 25)
+```
+# Install Docker 
+sudo systemctl start docker
+sudo systemctl enable docker
+# Add yourself to the docker group
+sudo groupadd docker && sudo gpasswd -a ${USER} docker && sudo systemctl restart docker
+newgrp docker
+# Install sshpass for the startup script
+sudo dnf install sshpass
+```
+On Fedora 26+ check the instructions at docker.com
+
+
+Pulling, launching and testing.
+
+```
 # Get the sureli-docker image from dockerhub (or build it following instructions in the README)
 docker pull carlosaguilar/sureli-docker
-# Install sshpass for the startup script, in Ubunt distribs you can use
-sudo apt install sshpass
 # Run the docker image and log in with ssh to it
 ./sureli-docker.sh
 # Start tmux or screen to be able to have multiple sessions in the same terminal
