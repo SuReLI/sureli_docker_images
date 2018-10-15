@@ -29,6 +29,7 @@ sudo apt install sshpass
 Pre-requisites (Fedora 25)
 ```
 # Install Docker 
+sudo dnf install docker
 sudo systemctl start docker
 sudo systemctl enable docker
 # Add yourself to the docker group
