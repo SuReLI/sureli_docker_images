@@ -46,13 +46,15 @@ Pulling, launching and testing.
 ```
 # Get the sureli-docker image from dockerhub (or build it following instructions in the README)
 docker pull carlosaguilar/sureli-docker
+# Tag it to have a shorter name
+docker tag docker.io/carlosaguilar/sureli-docker sureli-docker
 # Run the docker image and log in with ssh to it
 ./sureli-docker.sh
 # Start tmux or screen to be able to have multiple sessions in the same terminal
 tmux
 # Launch Jupyter
 jupyter notebook
-# Open a web navigator and go to http://localhost:8888
+# Open a web navigator and go to http://localhost:38888
 # Go to "RL Class -> RL0 - Introduction to Reinforcement Learning.ipynb"
 # Execute the first python cell (bottom of the document)
 # This should open up a window with Breakout
@@ -121,7 +123,7 @@ If you don't understand what I am talking about, install `sshpass`.
 
 To run the docker just execute `./sureli-docker.sh`, which:
  - Runs the docker container
- - Exports port 8888 (Jupyter) and 6006 (Tensorflow Dashboard) 
+ - Exports port 8888 (Jupyter) and 6006 (Tensorflow Dashboard) to 38888 and 36006
  - Mounts the `notebook` directory inside the container
  - Logs in the container via SSH
  - Stops the container when exiting the SSH connection
