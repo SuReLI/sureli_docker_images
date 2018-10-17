@@ -48,10 +48,8 @@ Pulling, launching and testing.
 docker pull carlosaguilar/sureli-docker
 # Tag it to have a shorter name
 docker tag docker.io/carlosaguilar/sureli-docker sureli-docker
-# Run the docker image and log in with ssh to it
+# Run the docker image and log in with ssh to it with a tmux session
 ./sureli-docker.sh
-# Start tmux or screen to be able to have multiple sessions in the same terminal
-tmux
 # Launch Jupyter
 jupyter notebook
 # Open a web navigator and go to http://localhost:38888
@@ -126,6 +124,7 @@ To run the docker just execute `./sureli-docker.sh`, which:
  - Exports port 8888 (Jupyter) and 6006 (Tensorflow Dashboard) to 38888 and 36006
  - Mounts the `notebook` directory inside the container
  - Logs in the container via SSH
+ - Starts a tmux session
  - Stops the container when exiting the SSH connection
 
 If you get an SSH warning about a man-in-the-middle attack execute the line which starts with `ssh-keygen -f...` (you may need to add quotes to the last argument of this command). Note that doing so isn't safe for non-loopback connections so don't get used to it ;).
